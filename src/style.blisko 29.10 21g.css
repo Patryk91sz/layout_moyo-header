@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 5px;
   font-family: Roboto, sans-serif;
 }
 
@@ -13,33 +13,34 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   box-sizing: border-box;
-  width: auto;
-  padding: 0 50px;
-  position: relative;
-  margin: 5px 0;
-  top: -67px;
 }
 
 .header__logo {
-  display: block;
   height: 40px;
+  display: block;
+  margin-left: 50px;
+  width: auto;
   position: relative;
-  top: 31px;
+  top: -10px;
 }
 
 .linki {
   display: flex;
-  justify-content: flex-start;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  padding: 0 0 10px;
+  margin-right: 50px;
+  width: auto;
   position: relative;
-  top: 36px;
+  top: -15;
 }
 
 .nav__link {
-  display: inline-flex;
+  display: inline-block; /* stable box for absolute ::after */
   text-decoration: none;
   color: black;
   font-weight: 500;
@@ -49,26 +50,20 @@ body {
   height: var(--nav-link-height);
   position: relative;
   box-sizing: border-box;
-  margin-left: 20;
-  padding: 0;
-
-  /* na 50 5.60 i 11.62 */
-}
-
-.pierwszy {
-  margin-left: 0;
+  margin-left: 20px;
 }
 
 .nav__link::after {
   content: '';
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   width: 0%;
   height: 4px;
   background-color: var(--moyo-blue);
   box-sizing: border-box;
-  transition: width 10ms ease-in-out;
+  transition: width 150ms ease-in-out;
+  display: block;
 }
 
 .nav__link.is-active {
@@ -77,6 +72,7 @@ body {
 
 .nav__link.is-active::after {
   width: 100%;
+  top: 66px;
 }
 
 .nav__link:hover {
